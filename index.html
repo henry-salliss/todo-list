@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>To do list</h1>
+      <input class="input" type="text" placeholder="I need to..." />
+      <button class="btn" id="submitBtn">Submit</button>
+      <button class="btn" id="clearBtn">Clear list</button>
+    </div>
+
+    <div class="list-container">
+      <ol class="list"></ol>
+      <button style="display: none" id="xBtn"></button>
+      <button style="display: none" id="doneBtn"></button>
+    </div>
+  </body>
 </html>
