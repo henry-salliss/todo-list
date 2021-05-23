@@ -12,10 +12,10 @@ const submit = function () {
   if (inputField.value != "") {
     // Make new HTML
     const html = `<li class='list-item'>
-${inputField.value}
-<button class="btn delete" id="xBtn">X</button>
-<button class="btn done" id="doneBtn">Done</button>
-</li>`;
+  ${inputField.value}
+  <button class="btn delete" id="xBtn">X</button>
+  <button class="btn done" id="doneBtn">Done</button>
+  </li>`;
     list.insertAdjacentHTML("beforeend", html);
 
     inputField.value = "";
