@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Padauk&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="script.js"></script>
@@ -24,10 +29,15 @@
         <button class="btn" id="clearBtn">Clear list</button>
       </div>
 
+      <h2 style="color: white">Tasks:</h2>
       <div class="list-container">
         <ol class="list"></ol>
         <button style="display: none" id="xBtn"></button>
         <button style="display: none" id="doneBtn"></button>
+      </div>
+      <h2 style="color: white">Completed:</h2>
+      <div class="list-container">
+        <ol class="completed-list"></ol>
       </div>
     </div>
   </body>

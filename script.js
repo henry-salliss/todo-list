@@ -1,6 +1,7 @@
 // Selecting the elements
 const inputField = document.querySelector(".input");
 const list = document.querySelector(".list");
+const completedList = document.querySelector(".completed-list");
 const submitBtn = document.getElementById("submitBtn");
 const clearBtn = document.getElementById("clearBtn");
 const xBtn = document.getElementById("xBtn");
@@ -12,9 +13,11 @@ const submit = function () {
   if (inputField.value != "") {
     // Make new HTML
     const html = `<li class='list-item'>
-  ${inputField.value}
+    <p>${inputField.value}</p>
+  <div class='listBtns'>
   <button class="btn delete" id="xBtn">X</button>
   <button class="btn done" id="doneBtn">Done</button>
+  </div>
   </li>`;
     list.insertAdjacentHTML("beforeend", html);
 
@@ -35,6 +38,7 @@ document.addEventListener("keydown", function (e) {
 // Clear list button
 clearBtn.addEventListener("click", function () {
   $(list).empty();
+  $(completedList).empty();
   inputField.focus();
 });
 
@@ -43,7 +47,7 @@ clearBtn.addEventListener("click", function () {
 list.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete")) {
     console.log(e.target.parentElement);
-    e.target.parentElement.remove();
+    e.target.parentElement.parentElement.remove();
   }
 });
 
@@ -51,6 +55,8 @@ list.addEventListener("click", function (e) {
 
 list.addEventListener("click", function (e) {
   if (e.target.classList.contains("done")) {
-    e.target.parentElement.classList.add("complete");
+    e.target.parentElement.parentElement.classList.add("complete");
+    e.target.parentElement.parentElement.remove();
+    completedList.append(e.target.parentElement.parentElement);
   }
 });
