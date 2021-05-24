@@ -51,12 +51,22 @@ list.addEventListener("click", function (e) {
   }
 });
 
+completedList.addEventListener("click", function (e) {
+  if (e.target.classList.contains("delete")) {
+    e.target.parentElement.parentElement.remove();
+  }
+});
+
 // Done button
 
 list.addEventListener("click", function (e) {
   if (e.target.classList.contains("done")) {
     e.target.parentElement.parentElement.classList.add("complete");
+
+    // moving task into completed list
     e.target.parentElement.parentElement.remove();
     completedList.append(e.target.parentElement.parentElement);
+
+    inputField.focus();
   }
 });
