@@ -66,7 +66,8 @@ list.addEventListener("click", function (e) {
     // moving task into completed list
     e.target.parentElement.parentElement.remove();
     completedList.append(e.target.parentElement.parentElement);
-
+    console.log(e.target);
+    e.target.remove();
     inputField.focus();
   }
 });

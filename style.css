@@ -9,9 +9,11 @@ body {
 }
 
 h1 {
-  font-family: "Padauk", sans-serif;
-  color: white;
-  text-decoration: underline;
+  margin-top: -11px;
+}
+
+h2 {
+  margin-bottom: 5px;
 }
 
 @keyframes reveal {
@@ -26,53 +28,49 @@ h1 {
   }
 }
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
-}
+} */
 
 .list-container {
-  display: flex;
-  justify-content: center;
   transition: 100ms;
-  align-items: center;
 }
 .list {
   padding: 0;
 }
 .btns {
   margin-top: 5%;
-  text-align: center;
 }
 .btn {
-  margin-bottom: 10%;
-  padding: 3%;
+  transition: 100ms;
   cursor: pointer;
-  background-color: rgb(107, 243, 191);
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  font-family: "Roboto", sans-serif;
+  color: rgb(14, 13, 13);
   font-weight: bold;
+}
+
+#submitBtn :hover {
+  color: rgb(107, 243, 191);
+  background-color: rgb(14, 13, 13);
 }
 .input {
   border: 0;
-  border-bottom: 1px solid black;
 }
 
 .listBtns {
   padding-left: 5%;
 }
 .list-item {
+  background: white;
+  display: flex;
+  justify-content: space-between;
   animation: reveal 0.5s ease-in-out;
   margin-bottom: 2%;
-  padding: 5%;
+  margin-left: 5%;
   transition: 100ms;
-  list-style-type: none;
-  width: 200px;
-  text-align: center;
-  border: 1px solid black;
-  background-color: rgba(235, 230, 230, 0.8);
 }
 
 .list-item p {
@@ -91,6 +89,51 @@ h1 {
   padding: 0;
 }
 .complete {
-  text-decoration: line-through;
   background-color: rgb(89, 233, 89);
+  border: 1px solid black;
+}
+
+.complete p {
+  text-decoration: line-through;
+}
+
+/* paper design */
+#paper {
+  width: 600px;
+  height: 700px;
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+}
+
+/* styling red vertical line */
+#paper::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+/* styling blue horizontal lines */
+#pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+/* styling text content */
+#content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-family: "Dancing Script", cursive;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
 }
